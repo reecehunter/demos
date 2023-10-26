@@ -47,12 +47,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "stripeLambda",
+            "stripeDemoLambda",
             {
               "Fn::Join": [
                 "",
                 [
-                  "stripeLambda",
+                  "stripeDemoLambda",
                   "-",
                   {
                     "Ref": "env"
@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "stripedemoLambdaRolede6160cf",
+            "stripedemoLambdaRole558a7f05",
             {
               "Fn::Join": [
                 "",
                 [
-                  "stripedemoLambdaRolede6160cf",
+                  "stripedemoLambdaRole558a7f05",
                   "-",
                   {
                     "Ref": "env"

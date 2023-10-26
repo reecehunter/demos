@@ -47,12 +47,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "webhookLambda",
+            "stripeDemoWebhookLambda",
             {
               "Fn::Join": [
                 "",
                 [
-                  "webhookLambda",
+                  "stripeDemoWebhookLambda",
                   "-",
                   {
                     "Ref": "env"
@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "stripedemoLambdaRoled36400a8",
+            "stripedemoLambdaRole8cd23f0e",
             {
               "Fn::Join": [
                 "",
                 [
-                  "stripedemoLambdaRoled36400a8",
+                  "stripedemoLambdaRole8cd23f0e",
                   "-",
                   {
                     "Ref": "env"

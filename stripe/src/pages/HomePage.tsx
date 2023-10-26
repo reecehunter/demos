@@ -10,7 +10,7 @@ const HomePage = () => {
       <Typography component='h1' variant='h3'>
         Stripe Payments Demo
       </Typography>
-      <Button sx={{ my: 2 }} startIcon={<CreditCard />} variant='contained' onClick={() => navigate('/pay')}>
+      <Button sx={{ my: 2 }} startIcon={<CreditCard />} variant='contained' onClick={() => navigate('/checkout')}>
         Start Demo
       </Button>
       <Typography variant='body1'>

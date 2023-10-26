@@ -1,4 +1,3 @@
-
 /*
 Copyright 2017 - 2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with the License. A copy of the License is located at
@@ -18,7 +17,8 @@ const awsServerlessExpressMiddleware = require('aws-serverless-express/middlewar
 const app = express()
 app.use(bodyParser.json())
 app.use(awsServerlessExpressMiddleware.eventContext())
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY ||
+  'sk_test_51O0rhiE2kmVWNN7djO81cUs9j5DeaGMGjBAsg8e5sG3INhjG4KqWsXQqDfrp29PTHNtTlJQPI8N1UmrPhG1GbBT300b7oJ5atv')
 
 // Enable CORS for all methods
 app.use(function(req, res, next) {
@@ -48,9 +48,9 @@ app.post('/stripe/create-payment-intent', async (req, res) => {
   }
 })
 
-/**********************
- * Start the app      *
- **********************/
+/****************************
+* Start the server          *
+****************************/
 
 app.listen(3000, function() {
     console.log("App started")

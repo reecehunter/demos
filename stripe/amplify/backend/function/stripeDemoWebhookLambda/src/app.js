@@ -1,3 +1,4 @@
+
 /*
 Copyright 2017 - 2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with the License. A copy of the License is located at
@@ -17,13 +18,14 @@ const awsServerlessExpressMiddleware = require('aws-serverless-express/middlewar
 const app = express()
 app.use(bodyParser.json())
 app.use(awsServerlessExpressMiddleware.eventContext())
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 
 // Enable CORS for all methods
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*")
   res.header("Access-Control-Allow-Headers", "*")
   next()
-})
+});
 
 
 /**********************
@@ -37,7 +39,6 @@ app.post('/webhook/stripe', async (req, res) => {
   // Verify the event with the Stripe webhook signing key.
   const stripeSignature = req.headers['stripe-signature']
   try {
-    const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
     const event = stripe.webhooks.constructEvent(req.rawBody, stripeSignature, process.env.STRIPE_WEBHOOK_SECRET)
     if(event.type !== 'payment_intent.succeeded') return res.status(500).json({ message: 'Invalid event type.' })
     // Return the result.
@@ -54,7 +55,7 @@ app.post('/webhook/stripe', async (req, res) => {
 
 app.listen(3000, function() {
     console.log("App started")
-})
+});
 
 // Export the app object. When executing the application local this does nothing. However,
 // to port it to AWS Lambda we will create a wrapper around that will load the app from

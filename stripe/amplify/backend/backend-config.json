@@ -1,6 +1,6 @@
 {
   "api": {
-    "stripeAPI": {
+    "stripeDemoWebhookLambda": {
       "dependsOn": [
         {
           "attributes": [
@@ -8,15 +8,7 @@
             "Arn"
           ],
           "category": "function",
-          "resourceName": "stripeLambda"
-        },
-        {
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "category": "function",
-          "resourceName": "webhookLambda"
+          "resourceName": "stripeDemoWebhookLambda"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -24,15 +16,49 @@
     }
   },
   "function": {
-    "stripeLambda": {
+    "stripeDemoLambda": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
-    "webhookLambda": {
+    "stripeDemoWebhookLambda": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_stripeDemoLambda_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "stripeDemoLambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_stripeDemoLambda_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "stripeDemoLambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_stripeDemoWebhookLambda_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "stripeDemoWebhookLambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_stripeDemoWebhookLambda_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "stripeDemoWebhookLambda"
+        }
+      ]
     }
   }
 }

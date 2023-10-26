@@ -1,20 +1,20 @@
 export type AmplifyDependentResourcesAttributes = {
   "api": {
-    "stripeAPI": {
+    "stripeDemoWebhookLambda": {
       "ApiId": "string",
       "ApiName": "string",
       "RootUrl": "string"
     }
   },
   "function": {
-    "stripeLambda": {
+    "stripeDemoLambda": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
       "LambdaExecutionRoleArn": "string",
       "Name": "string",
       "Region": "string"
     },
-    "webhookLambda": {
+    "stripeDemoWebhookLambda": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
       "LambdaExecutionRoleArn": "string",
