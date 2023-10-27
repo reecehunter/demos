@@ -1,4 +1,5 @@
 # Stripe Demo
+> A demonstration of how to use Stripe and AWS Lambda functions to create a fully scalable payment processing method.
 
 ## Technologies
 - AWS Amplify
