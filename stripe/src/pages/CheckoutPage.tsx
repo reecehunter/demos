@@ -50,7 +50,7 @@ const PaymentPage = () => {
             Test Card Info: 4242 4242 4242 4242
           </Typography>
           <Typography sx={{ textAlign: 'center' }} variant='body1' color='gray'>
-            Expiration: 42/42
+            Expiration: 04/24
           </Typography>
           <Typography sx={{ textAlign: 'center' }} variant='body1' color='gray'>
             CVC: 424
