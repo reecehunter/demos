@@ -21,8 +21,8 @@ const PaymentPage = () => {
         setClientSecret(res.data.clientSecret)
       })
       .catch((err: AxiosError) => {
-          console.error(err)
-          setErrors([...errors, (err.response?.data as { message: string } | undefined)?.message || 'An error occurred.'])
+        console.error(err)
+        setErrors([...errors, (err.response?.data as { message: string } | undefined)?.message || 'An error occurred.'])
       })
   }
 

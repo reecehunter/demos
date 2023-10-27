@@ -7,6 +7,13 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/stripe/create-payment-intent": {
+      "name": "/stripe/create-payment-intent",
+      "lambdaFunction": "stripeDemoLambda",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }

@@ -15,11 +15,11 @@
       "function": {
         "stripeDemoLambda": {
           "deploymentBucketName": "amplify-stripedemo-dev-131623-deployment",
-          "s3Key": "amplify-builds/stripeDemoLambda-56393949636a55537834-build.zip"
+          "s3Key": "amplify-builds/stripeDemoLambda-4f43513961634d366e31-build.zip"
         },
         "stripeDemoWebhookLambda": {
           "deploymentBucketName": "amplify-stripedemo-dev-131623-deployment",
-          "s3Key": "amplify-builds/stripeDemoWebhookLambda-723656735a5456764643-build.zip"
+          "s3Key": "amplify-builds/stripeDemoWebhookLambda-514e56445a6879796275-build.zip"
         }
       },
       "api": {

@@ -17,8 +17,7 @@ const awsServerlessExpressMiddleware = require('aws-serverless-express/middlewar
 const app = express()
 app.use(bodyParser.json())
 app.use(awsServerlessExpressMiddleware.eventContext())
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY ||
-  'sk_test_51O0rhiE2kmVWNN7djO81cUs9j5DeaGMGjBAsg8e5sG3INhjG4KqWsXQqDfrp29PTHNtTlJQPI8N1UmrPhG1GbBT300b7oJ5atv')
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 
 // Enable CORS for all methods
 app.use(function(req, res, next) {
