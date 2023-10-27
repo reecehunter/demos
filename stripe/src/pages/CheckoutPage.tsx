@@ -44,6 +44,9 @@ const PaymentPage = () => {
       <SpinnerCallback isLoaded={!!(stripe && clientSecret)}>
         <Box sx={{ my: 2 }}>
           <Typography sx={{ textAlign: 'center' }} variant='body1' color='gray'>
+            You can test out the payment with the dummy info below:
+          </Typography>
+          <Typography sx={{ textAlign: 'center' }} variant='body1' color='gray'>
             Test Card Info: 4242 4242 4242 4242
           </Typography>
           <Typography sx={{ textAlign: 'center' }} variant='body1' color='gray'>
